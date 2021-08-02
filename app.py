@@ -4,7 +4,7 @@
 # In[1]:
 
 
-# import requried libraries and Bokeh functions
+# import required libraries and Bokeh functions
 import math
 import bokeh.plotting.figure as bk_figure
 from bokeh.io import curdoc, show
