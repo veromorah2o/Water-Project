@@ -103,6 +103,9 @@ def update_data(attrname, old, new):
     source2.data = dict(x=x, y=y2)
 
 
+# Trigger callback to change title
+text.on_change('value', update_title)
+
 for w in [Mass, menu]:
     w.on_change('value', update_data)
 
