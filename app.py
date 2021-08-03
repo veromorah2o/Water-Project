@@ -1,25 +1,15 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-# import required libraries and Bokeh functions
 import math
 import bokeh.plotting.figure as bk_figure
 from bokeh.io import curdoc, show
 from bokeh.layouts import row, widgetbox
 from bokeh.models import ColumnDataSource, Select
 from bokeh.models.widgets import Slider, TextInput
-from bokeh.io import output_file, reset_output, output_notebook
 import numpy as np
-from bokeh.server.server import Server
-from bokeh.application import Application
-from bokeh.application.handlers import FunctionHandler
-from bokeh.plotting import figure, show, save
 from bokeh.layouts import column, row
 
-# Set up data and function
+"""
+Initialize global variables and functions
+"""
 M = 500
 n = 0.375
 R = 1
@@ -29,11 +19,18 @@ time3 = 20
 
 
 def calculate_z(M, n):
+    """
+    Calculates z values for use in Bokeh plot curves
+
+    :param M: mass (kg)
+    :param n: porosity
+    :return: x (range of curves), y/yy/y2 (concentration at different times)
+    """
     x = np.arange(1.1, 400, 0.5)
     y = np.zeros([len(x)])
     yy = np.zeros([len(x)])
     y2 = np.zeros([len(x)])
-    q = 1.667
+    q = 1.667  # flow speed of groundwater in aquifer
     v = q / n
     D = v * 0.83 * (np.log10(x)) ** 2.414
     y = (M / (4 * math.pi * time1 * np.sqrt(D / R))) * np.exp(
@@ -68,13 +65,29 @@ text = TextInput(title="title", value='Concentration Signals (1 Dimension)')
 Mass = Slider(title="Pollution Mass (kg)", value=500, start=300, end=1000, step=5)
 menu = Select(options=['Well Sorted Sand', 'Glacial Till', 'Silt'], value='Well Sorted Sand', title='Soil Type')
 
-
-# Set up callbacks functions
+"""
+Define Bokeh event handler callback functions
+"""
 def update_title(attrname, old, new):
+    """
+    Bokeh event handler callback that changes the title of the plot
+
+    :param attrname: 'value' attribute of TextInput widget
+    :param old: previous title value
+    :param new: updated title value
+    :return:
+    """
     plot.title.text = text.value
 
 
 def update_data(attrname, old, new):
+    """
+    Bokeh event handler callback that redraws the plot when the mass or menu are changed
+
+    :param attrname: 'value' attribute of Mass and menu widgets
+    :param old: previous values of mass and menu
+    :param new: updated values of mass and menu
+    """
     # Get the current slider values
     if menu.value == 'Well Sorted Sand':
         n = 0.375
@@ -99,8 +112,3 @@ layout = row(plot, column(text, menu, Mass))
 
 curdoc().add_root(layout)
 curdoc().title = "Sliders"
-
-# In[ ]:
-
-
-# In[ ]:
