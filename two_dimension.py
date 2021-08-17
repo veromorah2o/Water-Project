@@ -134,15 +134,7 @@ layout = row(plot, widgetbox(text, vv, tt, aa, bt, back_bt))
 
 # curdoc().add_root(layout)
 # curdoc().title = "Concentration Signals"
-def modify_doc(doc):
-    doc.add_root(row(layout, width=800))
-    doc.title = "Sliders"
-    text.on_change('value', update_title)
 
-#show the plot and sliders 
-handler = FunctionHandler(modify_doc)
-app = Application(handler)
-show(app)
 """
 Export bokeh objects for use in html
 """
