@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
+from bokeh.application import Application
+from bokeh.application.handlers import FunctionHandler
+from bokeh.embed import components
 
 print('1D Contamination Spread in Groundwater')
 # -pollution 
@@ -30,7 +33,7 @@ print('1D Contamination Spread in Groundwater')
 
 import math
 import bokeh.plotting.figure as bk_figure
-from bokeh.io import curdoc, show
+from bokeh.io import curdoc, show, output_file, save
 from bokeh.layouts import row, widgetbox
 from bokeh.models import ColumnDataSource, Select
 from bokeh.models.widgets import Slider, TextInput
@@ -97,6 +100,8 @@ menu = Select(options=['Well Sorted Sand', 'Glacial Till', 'Silt'], value='Well 
 """
 Define Bokeh event handler callback functions
 """
+
+
 def update_title(attrname, old, new):
     """
     Bokeh event handler callback that changes the title of the plot
@@ -140,12 +145,24 @@ for w in [Mass, menu]:
 inputs = widgetbox(text, menu, Mass)
 layout = row(plot, column(text, menu, Mass))
 
-curdoc().add_root(layout)
-curdoc().title = "Concentration Signals"
+# curdoc().add_root(layout)
+# curdoc().title = "Concentration Signals"
 
 
-# In[ ]:
+"""
+Export bokeh objects for use in html
+"""
 
+script, div = components({
+    "Plot": plot,
+    "Inputs": inputs
+})
 
+f = open("app/templates/bokeh_output/1d_scripts.html", "w")
+f.write(script)
+f.close()
 
-
+f = open("app/templates/bokeh_output/1d_div.html", "w")
+for key, value in div.items():
+    f.write(str(value))
+f.close()
