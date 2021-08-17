@@ -11,13 +11,12 @@ body {
 
 .Site-footer {
     flex-shrink: 0;
-
-    padding: 20px;
+    padding: 10px;
 }
 
 .footer-title {
     color: white;
-    text-align: center;
+    padding-left: 15vw;
 }
 
 .Site-content {
