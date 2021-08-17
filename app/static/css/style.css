@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    background-color: #f8f8ff;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+}
+
+.Site-footer {
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+.footer-title {
+    color: white;
+    padding-left: 15vw;
+}
+
+.Site-content {
+    flex: 1 0 auto;
+
+    align-self: center;
+    background-color: white;
+    /*background-size: cover;*/
+    margin: 10px;
+    padding: 10px 100px 50px;
+}

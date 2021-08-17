@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} 1D | Water Project {% endblock %}
+
+{% block content %}
+
+    <h1>One Dimension Testing</h1>
+
+    <hr>
+
+    <h3>Problem:</h3>
+    <p>Sally and Zoe work at an environmental science lab as an intern assistant. One day, they were given a task to disposal a bottle of benzene. Without discussing with Zoe, Sally pours the chemical on the ground outside the lab! The benzene poured by Sally spilled directly into groundwater in the area! In order to prevent the local residents using the contaminated water, use the following contamination model to check the spread of the benzene.</p>
+
+    <h3>Model Application:</h3>
+    <p>The program gives you a plot which represents the chemical concentration at different distances towards east (right) from the lab. The program also gives you two variable, soil type and chemical mass, to stimulate what happened after Sally poured the benzene. You may choose the type of soil that the chemicals are going into and you may adjust the how much chemicals was poured. Use the two mathematical representations in the program and check how the concentration of the chemical changes at different locations over time.</p>
+
+    <h3>Questions:</h3>
+    <ol>
+        <li>What is the effect on the maximum concentration when porosity increases?</li>
+        <li>If the pollution mass, porosity, and absorption all stay constant, what happens to the concentration as time goes on?</li>
+        <li>Don’t change the pollution mass and porosity, observe and describe the changes to the curves as absorption changes?</li>
+    </ol>
+
+    <h3>Advanced Questions:</h3>
+    <ol>
+        <li>A spill occurred into an aquifer near UC Davis! The spill mass is known to have a mass of 800 kg, and soil test shows that the porosity of the aquifer is 0.36 and the absorption is 2.5. How far away horizontally can we expect the maximum concentration to occur after 5 days? and 20 days?</li>
+        <li>The city policy of Davis allows 20 kg/m of concentration for this contaminant. Knowing the porosity and absorption is 0.34 and 4.35 respectively. What is the maximum spill mass allowed in the aquifer before violating the local environmental policy?</li>
+    </ol>
+
+    <hr>
+
+    <iframe src="https://onedimensiontesting.herokuapp.com/app" width="1000" height="500" style="border: none"></iframe>
+
+{% endblock %}
