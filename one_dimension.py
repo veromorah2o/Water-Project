@@ -154,7 +154,7 @@ layout = row(plot, column(text, menu, Mass))
 """
 Export bokeh objects for use in html
 """
-
+#from here on is chaning python into html 
 script, div = components({
     "Plot": plot,
     "Inputs": inputs
