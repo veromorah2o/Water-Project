@@ -5,6 +5,8 @@
 
 
 # import requried libraries and Bokeh functions
+import os
+
 from bokeh.embed import components
 from bokeh.models import Button, CustomJS
 from bokeh.io import curdoc
@@ -142,11 +144,14 @@ script, div = components({
     "Inputs": inputs
 })
 
-f = open("app/templates/bokeh_output/2d_scripts.html", "w")
-f.write(script)
-f.close()
+filename = "app/templates/bokeh_output/2d_scripts.html"
+os.makedirs(os.path.dirname(filename), exist_ok=True)
+with open(filename, "w") as f:
+    f.write(script)
 
-f = open("app/templates/bokeh_output/2d_div.html", "w")
+filename = "app/templates/bokeh_output/2d_div.html"
+os.makedirs(os.path.dirname(filename), exist_ok=True)
+f = open(filename, "w")
 for key, value in div.items():
     f.write(str(value))
 f.close()

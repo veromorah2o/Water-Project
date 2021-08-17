@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
+import os
+
 from bokeh.application import Application
 from bokeh.application.handlers import FunctionHandler
 from bokeh.embed import components
@@ -158,11 +160,14 @@ script, div = components({
     "Inputs": inputs
 })
 
-f = open("app/templates/bokeh_output/1d_scripts.html", "w")
-f.write(script)
-f.close()
+filename = "app/templates/bokeh_output/1d_scripts.html"
+os.makedirs(os.path.dirname(filename), exist_ok=True)
+with open(filename, "w") as f:
+    f.write(script)
 
-f = open("app/templates/bokeh_output/1d_div.html", "w")
+filename = "app/templates/bokeh_output/1d_div.html"
+os.makedirs(os.path.dirname(filename), exist_ok=True)
+f = open(filename, "w")
 for key, value in div.items():
     f.write(str(value))
 f.close()
