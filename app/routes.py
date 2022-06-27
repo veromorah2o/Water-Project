@@ -18,6 +18,6 @@ def one():
 def two():
     return render_template('two_dimension.html', bokeh_script=script, bokeh_div=div)
 
-@app.route("/Tay")
-def tay():
-    return "WORK IN PROGRESS"
+@app.route("/Borden")
+def borden():
+    return render_template('borden_site.html') #bokeh_script=script, bokeh_div=div)
