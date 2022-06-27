@@ -16,8 +16,8 @@ def one():
 
 @app.route("/2D")
 def two():
-    return render_template('two_dimension.html')
+    return render_template('two_dimension.html', bokeh_script=script, bokeh_div=div)
 
-@app.route("/tay")
+@app.route("/Tay")
 def tay():
-    return "hello world"
+    return "WORK IN PROGRESS"
