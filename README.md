@@ -12,6 +12,6 @@ python -m flask run
 ```
 
 Notes:
-This repo contains two heroku apps:
-- one for hosting the 1D/2D graphs
+This repo contains three heroku apps:
+- two for hosting the 1D and 2D graphs
 - one for hosting the static webpages that contain those graphs in iframes
