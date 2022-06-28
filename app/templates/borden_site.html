@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Borden Site | Water Project {% endblock %}
+
+{% block content %}
+
+    <h1>Borden Site Contamination Study</h1>
+
+    <hr>
+
+    <h3>Background:</h3>
+    <p>With tremendous effort and dedication, a group of scientists managed to actually measure the contamination around the Borden Site in Canada over a period of 1038 days – nearly three years – and show the actual path of real contaminants and tracers. Tracers are solutions that have nearly zero chance of physically or chemically interacting with other substances or physical aspects of the aquifers.</p>
+
+    <h3>Graphics:</h3>
+    <p>The following images show how the contaminants moved over the span of 647 days. The higher the concentration, the more red the region becomes! </p>
+
+    <h3>Questions:</h3>
+    <ol>
+        <li>What directions are these contaminants moving?</li>
+        <li>In these graphics, you only see contamination at one distance from the surface. How do you think contaminant concentrations change with different depths from the surface?</li>
+    </ol>
+
+    <h3>Advanced Questions:</h3>
+    <ol>
+        <li>Do these plumes look similar to those shown in the 2D or ADE examples? If no, what factors do you think play into these differences? </li>
+        <li>How to the tracers described previously help scientists understand contamination?</li>
+    </ol>
+
+    <hr>
+
+   <!-- <iframe src="https://onedimensiontesting.herokuapp.com/app" width="1000" height="500" style="border: none"></iframe> -->
+
+    <!-- adding safe to directly load the bokeh content into the page 
+    {{ bokeh_script|safe }}
+
+    {{ bokeh_div|safe }}-->
+
+{% endblock %}
