@@ -4,6 +4,7 @@
 
 {% block content %}
 
+
     <h1>Borden Site Contamination Study</h1>
 
     <hr>
@@ -13,7 +14,25 @@
 
     <h3>Graphics:</h3>
     <p>The following images show how the contaminants moved over the span of 647 days. The higher the concentration, the more red the region becomes! </p>
+    
+    <div id="main">
+        <div class="category-1">
+          <img src="{{ url_for('static', filename='assets/day1_Borden.jpg') }}" alt="Day 1"/>
+          
+        </div>
+        <div class="category-2">
+          <img src="static/assets/day259_borden.jpg" alt="Day 259">
 
+        </div>
+        <div class="category-3">
+          <img src="static/assets/day462_borden.jpg" alt="Day 462">
+          
+        </div>
+        <div class="category-4">
+          <img src="static/assets/day647_borden.jpg" alt="Day 647">
+          
+        </div>
+    </div>
     <h3>Questions:</h3>
     <ol>
         <li>What directions are these contaminants moving?</li>

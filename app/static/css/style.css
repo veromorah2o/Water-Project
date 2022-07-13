@@ -28,3 +28,18 @@ body {
     margin: 10px;
     padding: 10px 100px 50px;
 }
+
+#main {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+#main img{
+    max-width: 500px; 
+    height: auto;
+    margin-top: 10px;
+    display: block;
+    margin: auto;
+    border: 3px lightblue solid;
+}
