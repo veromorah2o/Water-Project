@@ -145,7 +145,6 @@ for w in [Mass, menu]:
 
 # Set up layouts and add to document
 inputs = widgetbox(text, menu, Mass)
-layout = row(plot, column(text, menu, Mass))
 
 # curdoc().add_root(layout)
 # curdoc().title = "Concentration Signals"
